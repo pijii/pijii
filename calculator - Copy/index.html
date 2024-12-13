@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        <!--buttons that has different finction-->
+        <input type="text" id="userInput" oninput="updateButtonText()">
+        <button id="input1" class="darker" onclick="addToInput('(')"><b>(</b></button>
+        <button id="input2" class="darker" onclick="addToInput(')')"><b>)</b></button>
+        <button id="input3" class="darker" onclick="addToInput('%')"><b>%</b></button>
+        <button id="input4" class="darker" onclick="clearInput('userInput')"><b>AC</b></button>
+        <button id="input5" onclick="addToInput('7')"><b>7</b></button>
+        <button id="input6" onclick="addToInput('8')"><b>8</b></button>
+        <button id="input7" onclick="addToInput('9')"><b>9</b></button>
+        <button id="input8" class="darker" onclick="addToInput('÷')"><b>÷</b></button>
+        <button id="input9" onclick="addToInput('4')"><b>4</b></button>
+        <button id="input10" onclick="addToInput('5')"><b>5</b></button>
+        <button id="input11" onclick="addToInput('6')"><b>6</b></button>
+        <button id="input12" class="darker" onclick="addToInput('×')"><b>×</b></button>
+        <button id="input13" onclick="addToInput('1')"><b>1</b></button>
+        <button id="input14" onclick="addToInput('2')"><b>2</b></button>
+        <button id="input15" onclick="addToInput('3')"><b>3</b></button>
+        <button id="input16" class="darker" onclick="addToInput('-')"><b>-</b></button>
+        <button id="input17" onclick="addToInput('0')"><b>0</b></button>
+        <button id="input18" onclick="addToInput('.')"><b>.</b></button>
+        <button id="input19" class="equal" onclick="calculateResult()"><b>=</b></button>
+        <button id="input20" class="darker" onclick="addToInput('+')"><b>+</b></button>
+    </div>
+</body>
+</html>

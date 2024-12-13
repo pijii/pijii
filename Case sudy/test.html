@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" placeholder="Enter Pin" id="Pin" maxlength="4">
+    <button onclick="pin()">Submit</button>
+    <p id="Message"></p>
+    <br>
+    
+    <script>
+        function pin() {
+            const pass = document.getElementById('Pin');
+            const message = document.getElementById('Message');
+
+            if (pass.value == '1234') {
+                message.innerText = 'Access Granted'
+                message.style.color = 'green';
+            } else {
+                message.innerText = 'Invalid Pin'
+                message.style.color = 'red'
+            }
+        }
+
+    </script>
+</body>
+</html>

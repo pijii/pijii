@@ -1,0 +1,270 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.slider {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    -webkit-transition: transform 1s ease-in-out;
+    -moz-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    width: calc(100vw * 10);
+    height: 100%;
+}
+
+.slides img {
+    width: 100vw;          
+    height: 100vh;         
+    object-fit: cover;     
+    flex-shrink: 0;       
+}
+
+.login {
+    margin: auto;
+    padding-top: 2%;
+    border: 0px solid;
+    border-radius: 40px;
+    text-align: left;
+    width: 33dvw;
+    height: 70dvh;
+    position: absolute;
+    top: 14%;
+    left: 55%;
+    align-items: center;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: hidden;
+    background-color: beige;
+}
+
+#email, #password {
+    height: 6dvh;
+    width: 27dvw;
+    border: 2px solid rgba(128, 128, 88, 0.295);
+    margin-left: 8%;
+    font-size: 110%;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    background-color: beige;
+    position: relative;
+}
+
+button {
+    width: 27.6dvw;
+    height: 7dvh;
+    border: 2px solid lightgray;
+    margin-top: 16%;
+    border-radius: 15px;
+    background-color: rgb(53, 112, 176);
+    color: white;
+    margin-left: 8%;
+    position: relative;
+    font-size: larger;
+}
+
+button:hover {
+    background-color: rgb(73, 165, 202);
+}
+
+input::placeholder {
+    color: rgb(142, 142, 142);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 11%;
+}
+
+.Show {
+    margin-left: 8.5%;
+    margin-top: 7%;
+}
+
+.pic1 {
+    width: 25dvw;
+    left: 14%;
+    top: 9.5%;
+    position: absolute;
+    z-index: 11;
+
+}
+
+.pic2 {
+    width: 30dvw;
+    position: absolute;
+    left: 11.5%;
+    top: 51%;
+    z-index: 11;
+    background-color: beige;
+    border: 10px solid lightskyblue;
+    border-radius: 20px;
+}
+
+input:focus, button:focus {
+    outline: 2px solid rgba(53, 112, 176, 0.7);
+}
+
+.check input[type='checkbox']{
+    background-color: transparent;
+    width: 4.5%;
+    height: 5.3%;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    position: absolute;
+    border: 2px solid skyblue;
+    border-radius: 50px;
+}
+
+.check p {
+    margin-left: 16%;
+    margin-top: 3.8%;
+    font-size: 89%;
+    position: absolute;
+}
+
+.inptext {
+    margin-left: 8.5%;
+}
+
+@media screen and (max-width: 1024px) {
+    .pic1 {
+        top: 20%;
+    }
+
+    .login {
+        top: 18%;
+        height: 62%;
+    }
+}
+
+/* For screens with a max-width of 768px (tablet devices) */
+@media screen and (max-width: 768px) {
+    .pic1 {
+        position: absolute; /* Ensure proper positioning */
+        top: 4%;
+        left: 5%;
+        width: 20%;
+    }
+
+    .pic2 {
+        position: absolute;
+        top: 16%;
+        left: 28%;
+        width: 40%;
+    }
+
+    .login {
+        position: absolute;
+        top: 30%;
+        width: 50%;
+        left: 24%;
+        height: 60%; /* Consolidated duplicate height rule */
+    }
+
+    .check p {
+        margin-top: 3%;
+    }
+
+    h1 {
+        margin-top: 0%;
+    }
+
+    #email, #password {
+        width: 80%;
+    }
+
+    button {
+        width: 83%;
+    }
+}
+
+/* For screens with a max-width of 425px (mobile devices) */
+@media screen and (max-width: 426px) {
+    .pic1 {
+        position: absolute;
+        top: 1%;
+        left: 5%;
+        width: 30%;
+    }
+
+    .pic2 {
+        position: absolute;
+        top: 17%;
+        left: 2.5%;  /* Adjusted left for full-width */
+        width: 90%;  /* Reduced width for better layout */
+    }
+
+    .login {
+        position: absolute;
+        top: 33%;
+        width: 90%; /* Ensured consistent width on mobile */
+        left: 5%;   /* Center-aligning it better */
+        height: 59%; /* Consolidated duplicate height rule */
+    }
+
+    .check p {
+        margin-top: 3%;
+    }
+
+    h1 {
+        margin-top: 3%;
+    }
+
+    #email, #password {
+        width: 80%;
+    }
+
+    button {
+        width: 83%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .pic1 {
+        position: absolute;
+        top: 3%;
+        left: 5%;
+        width: 30%;
+    }
+
+    .pic2 {
+        position: absolute;
+        top: 17%;
+        left: 2.5%;  /* Adjusted left for full-width */
+        width: 90%;  /* Reduced width for better layout */
+    }
+
+    .login {
+        position: absolute;
+        top: 30%;
+        width: 90%; /* Ensured consistent width on mobile */
+        left: 5%;   /* Center-aligning it better */
+        height: 55%; /* Consolidated duplicate height rule */
+    }
+
+    .check p {
+        margin-top: 3%;
+    }
+
+    h1 {
+        margin-top: 4%;
+    }
+
+    #email, #password {
+        width: 80%;
+    }
+
+    button {
+        width: 83%;
+    }
+}
+
+
