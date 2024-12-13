@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IslaBook Home</title>
+    <link rel="icon" href="Pics/Logo1.png" type="Image/x-icon">
+    <link rel="stylesheet" href="homestyle.css">
+    <script src="homeScript.js"></script>
+</head>
+<body>  
+
+    <div class="Header" id="Header">
+        <button onclick="toggleMenu()"></button>
+    </div>
+    <button class="logo" onclick="reload()"></button> 
+    <img src="Pics/Logo2.png" alt="logo2" class="pic2">  
+
+    <div class="menubar" id="sidebarMenu">
+        <button onclick="toggleMenu()"><b>×</b></button>
+        <img src="Pics/Logo2.png" alt="logo" class="menulogo">
+        <div class="Amenu">
+            <a href="#Header">HOME</a>
+        </div>
+        <div class="Amenu">
+            <a href="#info">INFO</a>
+        </div>
+        <div class="Amenu">
+            <a href="#footer">ABOUT</a>
+        </div>
+    </div>
+
+    <div class="slider">
+        <div class="slides">
+            <img src="Pics/Picture1.png" alt="Image 1">
+            <img src="Pics/Picture2.png" alt="Image 2">
+            <img src="Pics/Picture3.png" alt="Image 3">
+            <img src="Pics/Picture4.png" alt="Image 4">
+            <img src="Pics/Picture5.png" alt="Image 5">
+            <img src="Pics/Picture6.png" alt="Image 6">
+            <img src="Pics/Picture7.png" alt="Image 7">
+            <img src="Pics/Picture8.png" alt="Image 8">
+            <img src="Pics/Picture9.png" alt="Image 9">
+            <img src="Pics/Picture10.png" alt="Image 10">
+        </div>   
+    </div>
+
+
+
+    <div class="checkin">
+        <img src="Pics/Logo2.png" alt="logo2" class="logo2">
+        <div class="fillup">
+            <div class="searchbar">
+                <img src="Pics/navigation.png" alt="image" class="navigation">
+                <input type="text" id="searchbar" placeholder="Search resorts..." onkeyup="filterResorts()">
+            </div>
+            <div class="Realdate">
+                <img src="Pics/checin.png" alt="image" class="calendar1">
+                <button id="calendar1" onclick="toggleCalendar('.calendar1')">
+                    <h1 id="realDate1">Check-in Date</h1>
+                    <p id="realDay1">Day</p>
+                </button>
+                <img src="Pics/checkout.png" alt="image" class="calendar2">
+                <button id="calendar2" onclick="toggleCalendar('.calendar2')">
+                    <h1 id="realDate2">Check-out Date</h1>
+                    <p id="realDay2">Day</p>
+                </button>
+            </div>
+            <div class="numPeople">
+                <button onclick="rooms()" id="buttonRoom">
+                    <img src="Pics/people.png" alt="image" class="people" onclick="rooms()">
+                    <h1 id="numAdult">1 Adult</h1>
+                    <h1 id="numChildren"></h1>
+                    <p id="numRooms">1 Room</p>
+                    <img src="Pics/arrowdown.png" alt="image" class="arrow" onclick="rooms()">
+                </button>
+            </div>
+        </div>
+        <button id="book" onclick="toggleBook()"><b>Book</b></button>
+    </div>
+
+
+
+    <div class="dropdown" id="dropdownMenu">
+        <!-- Resort Items -->
+        <div class="dropdown-item" onclick="selectResort('Amanpulo - Pamalican Island, Palawan')">
+          <img src="Pics/Picture1.png" class="resort-image" alt="Amanpulo">
+          <div>
+            <div class="resort-info">Amanpulo</div>
+            <div class="resort-location">Pamalican Island, Palawan</div>
+          </div>
+        </div>
+        <div class="dropdown-item" onclick="selectResort('Balesin Island Club - Polillo, Quezon')">
+          <img src="Pics/Picture2.png" class="resort-image" alt="Balesin">
+          <div>
+            <div class="resort-info">Balesin Island Club</div>
+            <div class="resort-location">Polillo, Quezon</div>
+          </div>
+        </div>
+        <div class="dropdown-item" onclick="selectResort('Crimson Resort and Spa - Mactan, Cebu')">
+            <img src="Pics/Picture3.png" class="resort-image" alt="Crimson">
+            <div>
+              <div class="resort-info">Crimson Resort and Spa</div>
+              <div class="resort-location">Mactan, Cebu</div>
+            </div>
+          </div>
+        <div class="dropdown-item" onclick="selectResort('El Nido Resorts')">
+          <img src="Pics/Picture4.png" class="resort-image" alt="El Nido Resorts">
+          <div>
+            <div class="resort-info">El Nido Resorts</div>
+            <div class="resort-location">El Nido, Palawan</div>
+          </div>
+        </div>
+        <div class="dropdown-item" onclick="selectResort('Huma Island Resort and Spa - Busuanga, Palawan')">
+            <img src="Pics/Picture5.png" class="resort-image" alt="Huma Island">
+            <div>
+              <div class="resort-info">Huma Island Resort and Spas</div>
+              <div class="resort-location">Busuanga, Palawan</div>
+            </div>
+          </div>
+        <div class="dropdown-item" onclick="selectResort('Misibis Bay - Cagraray Island, Albay')">
+            <img src="Pics/Picture6.png" class="resort-image" alt="Misibis Bay">
+            <div>
+              <div class="resort-info">Misibis Bay</div>
+              <div class="resort-location">Cagraray Island, Albay</div>
+            </div>
+          </div>
+        <div class="dropdown-item" onclick="selectResort('Pearl Farm Beach Resort - Samal Island, Davao')">
+            <img src="Pics/Picture7.png" class="resort-image" alt="Pearl Farm Bay">
+            <div>
+              <div class="resort-info">Pearl Farm Beach Resort</div>
+              <div class="resort-location">Samal Island, Davao</div>
+            </div>
+          </div>
+          <div class="dropdown-item" onclick="selectResort('Shangri-La’s Boracay Resort & Spa')">
+          <img src="Pics/Picture8.png" class="resort-image" alt="Shangri-La’s Boracay Resort & Spa">
+          <div>
+            <div class="resort-info">Shangri-La’s Boracay Resort & Spa</div>
+            <div class="resort-location">Boracay, Aklan</div>
+          </div>
+        </div>
+        <div class="dropdown-item" onclick="selectResort('The Bellevue Resort - Panglao, Bohol')">
+            <img src="Pics/Picture9.png" class="resort-image" alt="Bellevue">
+            <div>
+              <div class="resort-info">The Bellevue Resort</div>
+              <div class="resort-location">Panglao, Bohol</div>
+            </div>
+          </div>
+        <div class="dropdown-item" onclick="selectResort('Two Seasons Coron Island Resort - Coron, Palawan')">
+            <img src="Pics/Picture10.png" class="resort-image" alt="Two Seasons Coron">
+            <div>
+              <div class="resort-info">Two Seasons Coron Island Resort</div>
+              <div class="resort-location">Coron, Palawan</div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+
+    <div id="room">
+        <div class="numberOFRoom">
+            <h1>Room</h1>
+            <button class="minus1" onclick="minuscount('roomCount', '.minus1',)">–</button>
+            <h2 id="roomCount">1</h2>
+            <button class="plus1" onclick="addcount('roomCount', '.minus1',)">+</button>
+        </div>
+        <div class="Adult">
+            <h1>Adult</h1><p>Ages 18 or above</p>
+            <button class="minus2" onclick="minuscount('AdultCount', '.minus2')">–</button>
+            <h2 id="AdultCount">1</h2>
+            <button class="plus2" onclick="addcount('AdultCount', '.minus2')">+</button>
+        </div>
+        <div class="Children"> 
+        <h1>Children</h1><p>Ages 0-17</p>
+        <button class="minus3" onclick="minuscountchild('ChildrenCount', '.minus3')">–</button>
+        <h2 id="ChildrenCount">0</h2>
+        <button class="plus3" onclick="addcountchild('ChildrenCount', '.minus3')">+</button>
+        </div>
+    </div>
+
+
+
+    <div id="calendar">
+      <!-- Left month -->
+      <div class="month">
+          <div class="header1">
+              <button id="prev">&#9664;</button>
+              <h2 class="month-year" id="monthYear1">Month Year</h2>
+              
+          </div>
+          <div class="days1">
+              <div class="day">Sun</div>
+              <div class="day">Mon</div>
+              <div class="day">Tue</div>
+              <div class="day">Wed</div>
+              <div class="day">Thu</div>
+              <div class="day">Fri</div>
+              <div class="day">Sat</div>
+          </div>
+          <div class="dates" id="dates1"></div>
+      </div>
+
+      <!-- Right month -->
+      <div class="month">
+          <div class="header2">
+              <h2 class="month-year" id="monthYear2">Month Year</h2>
+              <button id="next">&#9654;</button>
+          </div>
+          <div class="days2">
+              <div class="day">Sun</div>
+              <div class="day">Mon</div>
+              <div class="day">Tue</div>
+              <div class="day">Wed</div>
+              <div class="day">Thu</div>
+              <div class="day">Fri</div>
+              <div class="day">Sat</div>
+          </div>
+          <div class="dates" id="dates2"></div>
+      </div>
+  </div>
+
+
+  
+  <div id="receipt">
+    <img src="Pics/Logo2.png" alt="logo" class="receiptlogo">
+    <div class="confirm">
+      <h1 class="confirm"><b>CONFIRM</b></h1>
+    </div>
+    <div class="header3">
+      <div class="picBox">
+        <img src="image" alt="image" id="resort_image" width="100%">
+      </div>
+      <div class="resortName">
+        <h1 id="Rname">Resort Name</h1>
+      </div>
+    </div>
+    <div class="leftside">
+      <div class="check_in">
+        <h1 id="putCheckin">Check-in Date</h1>
+        <h2 id="putDay1">Day</h2>
+      </div>
+      <div class="check_out">
+        <h1 id="putCheckout">Check-in Date</h1>
+        <h2 id="putDay2">Day</h2>
+      </div>
+    </div>
+    <div class="rightside">
+      <div class="adult-count">
+        <h1 id="num-adult">Number of Adult</h1>
+      </div>
+      <div class="child-count">
+        <h1 id="num-child">Number of Children</h1>
+      </div>
+      <div class="room-count">
+        <h1 id="num-room">Number of Room</h1>
+      </div>
+    </div>
+    <button class="backButton" onclick="back()"><b>Back</b></button>
+    <button class="bookButton" onclick="confirm()"><b>Book</b></button>
+  </div>
+
+  <div class="bookingMess">
+    <h1>THANKYOU FOR BOOKING</h1>
+  </div>
+
+
+
+  <div class="top">
+    <h1>Top Resorts in the Philippines</h1>
+    <button id="leftarrow" onclick="slideleft()">
+    <img src="Pics/arrowdown.png" alt="arrow" class="leftScroll">
+    </button>
+    <div class="scroll">
+      <div id="scroller">
+        <div class="picResort">
+          <img src="Pics/Picture1.png" alt="image">
+          <h3>Amanpulo</h3>
+          <p>Pamalican Island, Palawan</p>
+        </div>
+        <div class="picResort">
+          <img src="Pics/Picture2.png" alt="image">
+          <h3>Balesin Island Club</h3>
+          <p>Polillo, Quezon</p>
+        </div>
+        <div class="picResort">
+          <img src="Pics/Picture3.png" alt="image">
+          <h3>Crimson Resort and Spa</h3>
+          <p>Mactan, Cebu</p>
+        </div>
+        <div class="picResort">
+          <img src="Pics/Picture4.png" alt="image">
+          <h3>El Nido Resorts</h3>
+          <p>El Nido, Palawan</p>
+        </div>
+        <div class="picResort">
+          <img src="Pics/Picture5.png" alt="image">
+          <h3>Huma Island Resort and Spa</h3>
+          <p>Busuanga, Palawan</p>
+        </div>
+        <div class="picResort">
+          <img src="Pics/Picture6.png" alt="image">
+          <h3>Misibis Bay</h3>
+          <p>Cagraray Island, Albay</p>
+        </div>
+        <div class="picResort">
+          <img src="Pics/Picture7.png" alt="image">
+          <h3>Pearl Farm Beach Resort</h3>
+          <p>Samal Island, Davao</p>
+        </div>
+        <div class="picResort">
+          <img src="Pics/Picture8.png" alt="image">
+          <h3>Shangri-La’s Boracay Resort & Spa</h3>
+          <p>Boracay, Aklan</p>
+        </div>
+        <div class="picResort">
+          <img src="Pics/Picture9.png" alt="image">
+          <h3>The Bellevue Resort</h3>
+          <p>Panglao, Bohol</p>
+        </div>
+        <div class="picResort">
+          <img src="Pics/Picture10.png" alt="image">
+          <h3>Two Seasons Coron Island Resort</h3>
+          <p>Coron, Palawan</p>
+        </div>
+      </div>
+    </div>
+    <button id="rightarrow" onclick="slideright()">
+    <img src="Pics/arrowdown.png" alt="arrow" class="rightScroll">
+    </button>
+  </div>
+
+
+  <div class="info" id="info">
+    <h2 class="header4">RESORTS INFO</h2>
+    <button class="Resorts" onclick="clickInfo('Amanpulo')">
+        <div class="frame">
+          <img src="Pics/Picture1.png" alt="image">
+        </div>
+        <h1>Amanpulo (Pamalican Island, Palawan)</h1>
+    </button>
+    <button class="Resorts" onclick="clickInfo('Balesin')">
+      <div class="frame">
+        <img src="Pics/Picture2.png" alt="image">
+      </div>
+      <h1>Balesin Island Club (Polillo, Quezon)</h1>
+    </button>
+    <button class="Resorts" onclick="clickInfo('Crimson')">
+      <div class="frame">
+        <img src="Pics/Picture3.png" alt="image">
+      </div>
+      <h1>Crimson Resort and Spa (Mactan, Cebu)</h1>
+    </button>
+    <button class="Resorts" onclick="clickInfo('El')">
+      <div class="frame">
+        <img src="Pics/Picture4.png" alt="image">
+      </div>
+      <h1>El Nido Resorts (El Nido, Palawan)</h1>
+    </button>
+    <button class="Resorts" onclick="clickInfo('Huma')">
+      <div class="frame">
+        <img src="Pics/Picture5.png" alt="image">
+      </div>
+      <h1>Huma Island Resort and Spa (Busuanga, Palawan)</h1>
+    </button>
+    <button class="Resorts" onclick="clickInfo('Misibis')">
+      <div class="frame">
+        <img src="Pics/Picture6.png" alt="image">
+      </div>
+      <h1>Misibis Bay (Cagraray Island, Albay)</h1>
+    </button>
+    <button class="Resorts" onclick="clickInfo('Pearl')">
+      <div class="frame">
+        <img src="Pics/Picture7.png" alt="image">
+      </div>
+      <h1>Pearl Farm Beach Resort (Samal Island, Davao)</h1>
+    </button>
+    <button class="Resorts" onclick="clickInfo('Shangri')">
+      <div class="frame">
+        <img src="Pics/Picture8.png" alt="image">
+      </div>
+      <h1>Shangri-La’s Boracay Resort & Spa (Boracay, Aklan)</h1>
+    </button>
+    <button class="Resorts" onclick="clickInfo('Bellevue')">
+      <div class="frame">
+        <img src="Pics/Picture9.png" alt="image">
+      </div>
+      <h1>The Bellevue Resort (Panglao, Bohol)</h1>
+    </button>
+    <button class="Resorts" onclick="clickInfo('Seasons')">
+      <div class="frame">
+        <img src="Pics/Picture10.png" alt="image">
+      </div>
+      <h1>Two Seasons Coron Island Resort (Coron, Palawan)</h1>
+    </button>
+  </div>
+
+  
+
+  <div id="infoContainer">
+    <button onclick="cancel()" class="closeButton">×</button>
+    <div class="header5">
+      <h1 id="resort-name">Resorts Name</h1>
+    </div>
+    <div class="aboutResort">
+      <p id="paraInfo">Resorts Info</p>
+    </div>
+    <button id="next" onclick="dragimage()">
+      <img src="Pics/arrowdown.png" alt="arrow" id="nextArrow">
+    </button>
+    <button id="return" onclick="backimage()">
+      <img src="Pics/arrowdown.png" alt="arrow" id="returntArrow">
+    </button>
+    <img src="image.png" alt="image" id="drag_image">
+  </div>
+
+
+
+  <div id="background-overlay"></div>
+
+
+
+  <div class="footer" id="footer">
+    <button class="home" onclick="goToClass2()">Home</button>
+    <br>
+    <button class="footerButton" onclick="toggleAbout()">About the Page</button>
+  </div>
+  
+
+  <div class="team">
+    <div class="message">
+      <h1>Group-1 IT13 Project-ISLABOOK</h1>
+      <p>
+        Our project, Project-ISLABOOK, was developed as a requirement for the IT13 subject by Group 1. 
+        This project represents our collective effort and dedication to showcasing the skills and knowledge we have gained 
+        throughout the course. We are proud to have created this project and hope it reflects the hard work and teamwork 
+        invested by the group.
+      </p>
+    </div>
+    <h1 class="projmem">PROJECT MEMBERS</h1>
+    <div class="teamMembers">
+      <button class="prevButton" onclick="slideleft2()">
+        <img src="Pics/arrowdown.png" alt="arrow">
+      </button>
+      <div class="teamscroller">
+        <div id="teamScroll">
+          <div class="memberContainer">
+            <button class="member">
+              <h1><b>Jayson Aizen M. De Jesus II</b></h1>
+              <img src="Pics/Aizen.jpeg" alt="Member Image">
+              <button class="fbacc" onclick="facebook('aizen')"></button>
+            </button>
+            <div class="motto">
+              <h3>“IF THERE IS NO GOD YOU ARE NO ONE”</h3>
+              <br>
+              <h3><b>- Jayson Aizen M. De Jesus II</b></h3>
+            </div>
+          </div>
+          <div class="memberContainer">
+            <button class="member">
+              <h1><b>Scarlet Marinelle Filomeno</b></h1>
+              <img src="Pics/Scarlet.jpeg" alt="Member Image">
+              <button class="fbacc" onclick="facebook('scarlet')"></button>
+            </button>
+            <div class="motto">
+              <h3>"Trust the timing of your life"</h3>
+              <br>
+              <h3><b>- Scarlet Marinelle Filomeno</b></h3>
+            </div>
+          </div>
+          <div class="memberContainer">
+            <button class="member">
+              <h1><b>Elaine Jacob</b></h1>
+              <img src="Pics/Elaine.jpeg" alt="Member Image"  >
+              <button class="fbacc" onclick="facebook('elaine')"></button>
+            </button>
+            <div class="motto">
+              <h3>"When the time is right, Lord will make it happen"</h3>
+              <br>
+              <h3><b>- Elaine Jacob</b></h3>
+            </div>
+          </div>
+          <div class="memberContainer">
+            <button class="member">
+              <h1><b>Aaron Dejesus</b></h1>
+              <img src="Pics/Aaron.png" alt="Member Image">
+              <button class="fbacc" onclick="facebook('aaron')"></button>
+            </button>
+            <div class="motto">
+              <h3>"Failure is a part of success."</h3>
+              <br>
+              <h3><b>- Aaron Dejesu</b></h3>
+            </div>
+          </div>
+          <div class="memberContainer">
+            <button class="member">
+              <h1><b>Ralph Christian Gomez</b></h1>
+              <img src="Pics/Ralph.jpeg" alt="Member Image">
+              <button class="fbacc" onclick="facebook('ralph')"></button>
+            </button>
+            <div class="motto">
+              <h3>"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."</h3>
+              <br>
+              <h3><b>- Ralph Christian Gomez</b></h3>
+            </div>
+          </div>
+          <div class="memberContainer">
+            <button class="member">
+              <h1><b>Khemsy Rhazer  Balilo</b></h1>
+              <img src="Pics/Khemzy.png" alt="Member Image">
+              <button class="fbacc" onclick="facebook('khemsy')"></button>
+            </button>
+            <div class="motto">
+              <h3>"Mistakes are not the end, but the beginning of progress. They are the lessons that shape our success, offering us the chance to learn, adapt, and grow stronger with every step."</h3>
+              <br>
+              <h3><b>- Khemsy Rhazer  Balilo</b></h3>
+            </div>
+          </div>
+          <div class="memberContainer">
+            <button class="member">
+              <h1><b>Rome Clarenz Serrano</b></h1>
+              <img src="Pics/Rome.jpeg" alt="Member Image">
+              <button class="fbacc" onclick="facebook('rome')"></button>
+            </button>
+            <div class="motto">
+              <h3>"If you want something you’ve never had, you must be willing to do something you’ve never done before"</h3>
+              <br>
+              <h3><b>- Rome Clarenz Serrano</b></h3>
+            </div>
+          </div>
+          <div class="memberContainer">
+            <button class="member">
+              <h1><b>Alwin Kerby Bagsic</b></h1>
+              <img src="Pics/Alwin.png" alt="Member Image">
+              <button class="fbacc" onclick="facebook('alwin')"></button>
+            </button>
+            <div class="motto">
+              <h3>"Learn to rest not to quit"</h3>
+              <br>
+              <h3><b>- Alwin Kerby Bagsic</b></h3>
+            </div>
+          </div>
+          <div class="memberContainer">
+            <button class="member">
+              <h1><b>Darell De Guzman</b></h1>
+              <img src="Pics/Darell.jpg" alt="Member Image">
+              <button class="fbacc" onclick="facebook('darell')"></button>
+            </button>
+            <div class="motto">
+              <h3>"Never let your memories be greater than your dreams."</h3>
+              <br>
+              <h3><b>- Darell De Guzman</b></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="nextButton">
+        <img src="Pics/arrowdown.png" alt="arrow" onclick="slideright2()">
+      </button>
+    </div>
+      <h1 class="projlead">PROJECT LEADER</h1>
+      <div class="teamLeader">
+        <button class="lead">
+          <h1>Peejay Ruben G Galang</h1>
+          <img src="Pics/Peejay.jpg" alt="Leader Image">
+          <button class="fbacc" onclick="facebook('peejay')"></button>
+          <div class="motto2">
+            <h3>"Stop complaining and do the work, actions are better that words"</h3>
+            <h3><b>- Peejay Ruben Galang</b></h3>
+          </div>
+        </button>
+      </div>
+</body>
+</html>
